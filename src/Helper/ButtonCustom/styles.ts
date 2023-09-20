@@ -26,6 +26,10 @@ const styles = {
         },
         padding: '10px',
         fontSize: '20px',
+    },
+
+    outline: {
+        
     }
 }
 export default styles;
