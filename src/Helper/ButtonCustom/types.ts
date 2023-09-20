@@ -6,6 +6,7 @@ export interface IButtonCustom {
     iconStart?: ReactElement,
     iconEnd?: ReactElement,
     outline?: boolean,
+    sx?: object,
     btn1?: boolean,
     btn2?: boolean,
     onClick?: (event: MouseEvent<HTMLButtonElement>) => void,
