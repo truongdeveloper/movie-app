@@ -1,3 +1,4 @@
-interface Ilayout {
-    
+interface ILayout {
+    children?: React.ReactNode,
+    titlePage?: string,
 }
