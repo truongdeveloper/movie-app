@@ -37,8 +37,6 @@ const axiosService = (props: IAxios) => {
             ...headers,
         }
     }
-
-    console.log({url, headersConfig})
     if(method == GET || DELETE || OPTIONS) {
         return axios[method](uri, headersConfig)
             .then((res: any) => {
