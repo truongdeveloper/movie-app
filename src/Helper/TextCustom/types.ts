@@ -8,7 +8,7 @@ export interface ITextCustom {
     h3?: boolean,
     textSM?: boolean,
     colorLinear?: boolean,
-    color?: string,
+    color?: any,
     sx?: object,
     children: React.ReactNode
 }
