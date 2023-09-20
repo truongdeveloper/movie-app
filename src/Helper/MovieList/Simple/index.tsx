@@ -8,11 +8,15 @@ import { Box, Grid } from "@mui/material";
 const MovieListComponent = (props: IMovieListComponent & WithStyles<typeof styles>) => {
     const {
         classes,
+        index,
+        value,
         listMovie
     } = props;
 
     return(
-        <Grid className={classes.root}>
+        <Grid
+            hidden={value !== index}
+            className={classes.root}>
 
 
         </Grid>

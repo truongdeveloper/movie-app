@@ -38,6 +38,7 @@ const ButtonCustom = (props: IButtonCustom) => {
                 ...btn1 && styles.btn1,
                 ...btn2 && styles.btn2,
                 ...outline && styles.outline,
+                ...sx
               
             }}
             onClick={onClick}
