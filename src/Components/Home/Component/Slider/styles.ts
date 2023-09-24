@@ -4,7 +4,7 @@ const styles = (theme: Theme) => createStyles({
     root: {
         '& .swiper-slide': {
             '&:before': {
-                content: " ",
+                content: '""',
                 width: '100%',
                 height: '30%',
                 zIndex: 1,
@@ -22,14 +22,24 @@ const styles = (theme: Theme) => createStyles({
             width: '100vw',
             height: '90vh',
             '&::before': {
-                content: " ",
+                content: '""',
                 width: '100%',
-                height: '30%',
+                height: '20%',
                 zIndex: 1,
                 display: 'block',
                 top: 0,
                 position: 'absolute',
                 background: 'linear-gradient(0deg,#070b11 0,rgba(7,11,17,0) 0,#000 100%)',
+            },
+            '&::after': {
+                content: '""',
+                width: '100%',
+                height: '30%',
+                zIndex: 1,
+                display: 'block',
+                bottom: 0,
+                position: 'absolute',
+                background: 'linear-gradient(180deg,#070b11 0,rgba(7,11,17,0) 0,#000 100%)',
             }
         }
     }

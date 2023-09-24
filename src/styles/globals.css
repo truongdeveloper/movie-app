@@ -18,14 +18,15 @@ body {
 }
   
 ::-webkit-scrollbar-track { 
-    background: #2e374a;
-    border-radius: 4px;
+    background: #131e2e;
+    border-radius: 0.8rem;
 }
 
 
 ::-webkit-scrollbar-thumb {
-    background: #647428; 
-    border-radius: 10px;
+    background: #647428;
+    width: 5px;
+    border-radius: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -35,5 +36,6 @@ body {
 .head {
     display: inline-flex;
     align-items: center;
+    flex-wrap: wrap;
 }
     
