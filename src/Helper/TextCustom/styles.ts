@@ -4,28 +4,32 @@ const styles = {
     textCustom: {
         fontFamily: 'inherit',
         lineHeight: '1.2rem',
+        textAlign: 'center',
     },
     h1: {
         fontWeight: 600,
         fontSize: '2rem',
+        lineHeight: '2.8rem',
         marginRight: '1rem'
     },
 
     h2: {
         fontWeight: 600,
         fontSize: '1.5rem',
+        lineHeight: '2.8rem',
+        margin: '0.5rem',
         marginRight: '1rem'
     },
 
     h3: {
         fontWeight: 400,
-        fontSize: '1rem',
-        marginRight: '1rem'
+        fontSize: '0.9rem',
     },
 
     textSM: {
         fontWeight: 400,
-        fontSize: '0.875rem',
+        fontSize: '0.8rem',
+        color: COLORS.textMuted,
     },
 
     colorLinear: {

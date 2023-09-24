@@ -32,6 +32,10 @@ const TabsCustom = (props: ITabsCustom) => {
                     'tabs-custom',
                 )
             }
+            sx={{
+                ...styles.TabCustom,
+            }}
+            centered
             onChange={handleChange}
             orientation={orientation}
             {...otherProps}
@@ -43,6 +47,7 @@ const TabsCustom = (props: ITabsCustom) => {
                         style={{
                             ...style,
                         }}
+                        
                         sx={{
                             ...styles.TabsCustom,
                         }}
