@@ -11,4 +11,5 @@ export interface IButtonCustom {
     btn2?: boolean,
     onClick?: (event: MouseEvent<HTMLButtonElement>) => void,
     children: React.ReactNode
+    disabled?: boolean,
 }

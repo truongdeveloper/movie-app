@@ -22,10 +22,14 @@ const styles = {
 
     btn2: {
         '& .MuiSvgIcon-root': {
-            fontSize: '20px',
+            fontSize: '18px',
         },
-        padding: '10px',
-        fontSize: '20px',
+        backgroundColor: COLORS.bgPrimary,
+        gap: '5px',
+        color: COLORS.white,
+        fontWeight: 400,
+        padding: '6px 12px',
+        fontSize: '16px',
     },
 
     outline: {

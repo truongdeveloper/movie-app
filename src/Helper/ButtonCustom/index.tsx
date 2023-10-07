@@ -15,6 +15,7 @@ const ButtonCustom = (props: IButtonCustom) => {
         outline,
         btn1,
         btn2,
+        disabled = false,
         iconEnd,
         onClick,
         sx,
@@ -32,7 +33,7 @@ const ButtonCustom = (props: IButtonCustom) => {
             style={{
                 ...style,
             }}
-
+            disabled={disabled}
             sx={{
                 ...styles.buttonCustom,
                 ...btn1 && styles.btn1,

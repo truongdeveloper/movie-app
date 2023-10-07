@@ -1,3 +1,13 @@
 {
-    "title": "Title"
+    "filter": "Filter",
+    "SearchPlaceHolder": "Search in there ...",
+    "recommened": "Recommened",
+    "discoverMovie": "Discover Movie",
+    "discoverTV": "Discover TV",
+    "mostView": "Most View",
+    "movies": "Movies",
+    "tvShows": "TV Shows",
+    "trending": "Trending",
+    "day": "Day",
+    "weeks": "Weeks"
 }

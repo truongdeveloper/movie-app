@@ -1,5 +1,7 @@
-import { MovieItem } from "@/Common/types";
+import { MovieItem, TVItem } from "@/Common/types";
 
 export interface IMovieItemSitebarComponent {
-    movieItem: MovieItem,
+    movieItem?: MovieItem,
+    tvItem?: TVItem,
+
 }

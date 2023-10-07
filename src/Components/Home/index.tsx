@@ -11,6 +11,7 @@ import TextCustom from "@/Helper/TextCustom";
 import TabsCustom from "@/Helper/TabsCustom";
 import MovieListComponent from "@/Helper/MovieList/Simple"
 import MovieListSitebarComponent from "@/Helper/MovieList/Sitebar"
+import { useTranslation } from "react-i18next";
 
 const HomeComponent = (props: IHomeComponent & WithStyles<typeof styles>) => {
     const {
@@ -28,19 +29,21 @@ const HomeComponent = (props: IHomeComponent & WithStyles<typeof styles>) => {
     const [value, setValue] = useState<number>(1);
     const [valueSitebar, setValueSitebar] = useState<number>(1);
 
+    const { t } = useTranslation();
+
     const listTabs = [
         {
-            title: 'Movies',
+            title: t('movies'),
             value: 1,
             icon: undefined
         },
         {
-            title: 'TV Shows',
+            title: t('tvShows'),
             value: 2,
             icon: undefined
         },
         {
-            title: 'Trending',
+            title: t('trending'),
             value: 3,
             icon: ''
         }
@@ -48,12 +51,12 @@ const HomeComponent = (props: IHomeComponent & WithStyles<typeof styles>) => {
 
     const listTabsSitebar = [
         {
-            title: 'Day',
+            title: t('day'),
             value: 1,
             icon: undefined
         },
         {
-            title: 'Week',
+            title: t('weeks'),
             value: 2,
             icon: undefined
         },
@@ -77,7 +80,7 @@ const HomeComponent = (props: IHomeComponent & WithStyles<typeof styles>) => {
                 >
                     <Box className="list-recommened head">
                         <TextCustom colorLinear h2>
-                            Recommened
+                            {t('recommened')}
                         </TextCustom>
                         <TabsCustom
                             value={value}
@@ -102,7 +105,7 @@ const HomeComponent = (props: IHomeComponent & WithStyles<typeof styles>) => {
                     />
                     <Box className="list-discover-movie head">
                         <TextCustom colorLinear h2>
-                            Discover Movie
+                            {t('discoverMovie')}
                         </TextCustom>
                     </Box>
                     <MovieListComponent
@@ -110,11 +113,11 @@ const HomeComponent = (props: IHomeComponent & WithStyles<typeof styles>) => {
                     />
                     <Box className="list-discover-tv head">
                         <TextCustom colorLinear h2>
-                            Discover TV
+                            {t('discoverTV')}
                         </TextCustom>
                     </Box>
                     <MovieListComponent
-                        listMovie={DiscoverTV}
+                        listTV={DiscoverTV}
                     />
                 </Grid>
                 <Grid
@@ -132,7 +135,7 @@ const HomeComponent = (props: IHomeComponent & WithStyles<typeof styles>) => {
                                 minWidth: '170px',
                             }}
                         >
-                            Most View
+                            {t('mostView')}
                         </TextCustom>
                         <TabsCustom
                             value={valueSitebar}

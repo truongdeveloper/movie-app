@@ -10,16 +10,26 @@ import CircleIcon from '@mui/icons-material/Circle';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import Link from "next/link";
 import { routerRoot } from "@/Common/routerRoot";
+import { isEmpty } from "lodash";
 
 
 const MovieItemSitebarComponent = (props: IMovieItemSitebarComponent & WithStyles<typeof styles>) => {
     const {
         classes,
         movieItem,
+        tvItem
     } = props;
+    
+    let item: any;
+
+    if(isEmpty(movieItem)){
+        item = tvItem;
+    }else{
+        item = movieItem;
+    }
 
     return(
-        <Link href={`${routerRoot.movie}/${movieItem.id}`} className={classes.root}>
+        <Link href={`${routerRoot.movie}/${item?.id}`} className={classes.root}>
             <Box  className="image">
                 <Image height={38} width={38}
                 style=
@@ -27,7 +37,7 @@ const MovieItemSitebarComponent = (props: IMovieItemSitebarComponent & WithStyle
                     overflow: 'hidden',
                     borderRadius: '8px',
                 }} 
-                objectFit="cover" src={lowImg(movieItem.poster_path)} alt="Poster" />
+                objectFit="cover" src={lowImg(item?.poster_path)} alt="Poster" />
             </Box>
             <Box>
                 <Box className="movie-item-info">
@@ -36,12 +46,12 @@ const MovieItemSitebarComponent = (props: IMovieItemSitebarComponent & WithStyle
                     </TextCustom>
                     <CircleIcon/>
                     <TextCustom textSM>
-                        {/* {movieItem.release_date.slice(0,4)} */}
+                        {/* {item.release_date.slice(0,4)} */}
                         HD
                     </TextCustom>
                     <CircleIcon/>
                     <TextCustom textSM>
-                        {movieItem.vote_average}
+                        {item?.vote_average}
                     </TextCustom>   
                 </Box>
                 <TextCustom
@@ -57,7 +67,9 @@ const MovieItemSitebarComponent = (props: IMovieItemSitebarComponent & WithStyle
 
                     }}
                 >
-                    {movieItem.title}
+                    {
+                        item?.title || item?.name
+                    }
                 </TextCustom>
             </Box>
         </Link>

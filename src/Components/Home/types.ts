@@ -1,4 +1,4 @@
-import { MovieItem } from "@/Common/types";
+import { MovieItem, TVItem } from "@/Common/types";
 
 export interface IHomeComponent {
     TopRate: MovieItem[],
@@ -8,5 +8,5 @@ export interface IHomeComponent {
     TrendingDay: MovieItem[],
     TrendingWeek: MovieItem[],
     DiscoverMovie: MovieItem[],
-    DiscoverTV: MovieItem[],
+    DiscoverTV: TVItem[],
 }

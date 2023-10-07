@@ -41,6 +41,18 @@ const styles = (theme: Theme) => createStyles({
                 fontSize: '13px'
             }
         }
+    },
+
+    Modal: {
+        position: 'absolute',
+        top: '30%',
+        left: '50%',
+        width: 400,
+        backgroundColor: COLORS.white,
+        boxShadow: 24,
+        borderRadius: 10,
+        padding: '20px 25px',
+        gap: '2rem',
     }
 })
 export default styles;

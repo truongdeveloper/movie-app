@@ -1,3 +1,13 @@
 {
-    "title": "Tiêu đề"
+    "filter": "Lọc",
+    "SearchPlaceHolder": "Tìm kiếm ở đây ...",
+    "recommened": "Dành cho bạn",
+    "discoverMovie": "Khám phá Phim lẻ",
+    "discoverTV": "Khám phá TV",
+    "mostView": "Xem nhiều",
+    "movies": "Phim lẻ",
+    "tvShows": "Phim bộ",
+    "trending": "Phổ biến",
+    "day": "Ngày",
+    "weeks": "Tuần"
 }

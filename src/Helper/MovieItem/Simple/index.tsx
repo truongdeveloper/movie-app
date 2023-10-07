@@ -17,11 +17,12 @@ const MovieItemComponent = (props: IMovieItemComponent & WithStyles<typeof style
     const {
         classes,
         movieItem,
+        tvItem
     } = props;
 
     return(
         <Box className={classes.root}>
-            <Link href={`${routerRoot.movie}/${movieItem.id}`} className="image">
+            <Link href={`${routerRoot.movie}/${movieItem?.id || tvItem?.id}`} className="image">
                 <Image height={500} width={500}
                 style=
                 {{
@@ -29,7 +30,7 @@ const MovieItemComponent = (props: IMovieItemComponent & WithStyles<typeof style
                     borderRadius: '10px',
                 }}
                 objectFit="cover"
-                src={hightImg(movieItem.poster_path)} 
+                src={hightImg(movieItem?.poster_path || tvItem?.poster_path)} 
                 alt="Poster" />
                 <Box component={'div'}
                     className={'overlay-image'}
@@ -45,25 +46,25 @@ const MovieItemComponent = (props: IMovieItemComponent & WithStyles<typeof style
                 <CircleIcon/>
                 <TextCustom textSM>
 
-                {movieItem.release_date? 
-                    movieItem.release_date.slice(0,4) 
+                {movieItem?.release_date? 
+                    movieItem.release_date?.slice(0,4) 
                     :
-                    'TV'
+                    tvItem?.first_air_date?.slice(0,4)
                 }
                 </TextCustom>
                 <CircleIcon/>
                 <TextCustom textSM>
-                    {movieItem.vote_average}
+                    {movieItem?.vote_average || tvItem?.vote_average}
                 </TextCustom>   
             </Box>
-            <Link href={`${routerRoot.movie}/${movieItem.id}`}>
+            <Link href={`${routerRoot.movie}/${movieItem?.id || tvItem?.id}`}>
                 <TextCustom
                     h3
                     style={{
                         height: '2.8rem',
                     }}
                 >
-                    {movieItem.title}
+                    {movieItem?.title || tvItem?.name}
                 </TextCustom>
             </Link>
 

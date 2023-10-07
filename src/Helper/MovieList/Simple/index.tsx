@@ -4,7 +4,7 @@ import { IMovieListComponent } from "./types";
 import React from "react";
 import { Box, Grid } from "@mui/material";
 import { isEmpty, uniqueId } from "lodash";
-import { MovieItem } from "@/Common/types";
+import { MovieItem, TVItem } from "@/Common/types";
 import MovieItemComponent from "@/Helper/MovieItem/Simple"
 
 
@@ -13,7 +13,8 @@ const MovieListComponent = (props: IMovieListComponent & WithStyles<typeof style
         classes,
         index,
         value,
-        listMovie
+        listMovie,
+        listTV,
     } = props;
 
     return(
@@ -31,7 +32,7 @@ const MovieListComponent = (props: IMovieListComponent & WithStyles<typeof style
                 alignItems={'stretch'}
                 columns={{ xs: 4, sm: 8, md: 12 }}
                 className={classes.root}>
-                    {!isEmpty(listMovie) && listMovie.map((item: MovieItem) => {
+                    {!isEmpty(listMovie) && listMovie?.map((item: MovieItem) => {
                         return(
                             <Grid
                                 item
@@ -40,6 +41,19 @@ const MovieListComponent = (props: IMovieListComponent & WithStyles<typeof style
                             >
                                 <MovieItemComponent
                                     movieItem={item}
+                                />
+                            </Grid>
+                        )
+                    })}
+                    {!isEmpty(listTV) && listTV?.map((item: TVItem) => {
+                        return(
+                            <Grid
+                                item
+                                xs={2} sm={2} md={2}
+                                key={uniqueId()}
+                            >
+                                <MovieItemComponent
+                                    tvItem={item}
                                 />
                             </Grid>
                         )
