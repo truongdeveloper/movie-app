@@ -21,7 +21,7 @@ interface actionType {
 
 function* actionLoginAccount(action: actionType): any {
     try {
-        yield delay(500);
+        yield delay(500); 
         const data = yield call(LoginGoogle);
         console.log(data)
     } catch (error) {
