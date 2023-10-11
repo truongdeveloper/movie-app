@@ -16,6 +16,20 @@ const reducer = (state = initialState, action: { type: any; payload: { data?: an
                 isSuccess: false,
             };
         }
+        case loginConstants.LOGIN_ACCOUNT_SUCCESS: {
+            return {
+                ...state,
+                isLoading: false,
+                isSuccess: true,
+            };
+        }
+        case loginConstants.LOGIN_ACCOUNT_FAILED: {
+            return {
+                ...state,
+                isLoading: false,
+                isSuccess: false,
+            };
+        }
         default: {
             return {
                 ...state,

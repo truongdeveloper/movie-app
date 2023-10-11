@@ -22,6 +22,7 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../api/config";
 import { toast } from "react-toastify";
 import { loginAction } from "@/Redux/actions";
+import { getUserInfo } from "../stograte";
 
 const HeaderComponent = (props: IHeaderComponent & WithStyles<typeof styles>) => {
     const {
@@ -33,13 +34,15 @@ const HeaderComponent = (props: IHeaderComponent & WithStyles<typeof styles>) =>
     
     const theme = 'dark';
     const lang = router.locale;
-
-    const [isLogin, setIslogin] = useState<boolean>(false);
+    const login = useSelector((state: any) => state.login )
+    // console.log(login)
     const handleLoginGoogle = () => {
         dispatch(loginAction.fetchLoginAccount({}))
         handleClose()
-        setIslogin(true)
     }
+    const userInfo = getUserInfo();
+    // console.log(userInfo)
+
     const handleChangeLanguage = () => {
         const { pathname, asPath, query, locale, locales } = router;        
         router.push(
@@ -115,8 +118,8 @@ const HeaderComponent = (props: IHeaderComponent & WithStyles<typeof styles>) =>
                                 <LightModeIcon/>
                             }
                         </Box>
-                        {isLogin? 
-                            <Avatar>VT</Avatar>
+                        {login.isSuccess? 
+                            <Avatar src={userInfo?.Photo}/>
                             :
                             <ButtonCustom
                                 btn2

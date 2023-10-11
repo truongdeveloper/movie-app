@@ -4,7 +4,7 @@ export const fetchLoginAccount = (dataSubmit: any) =>{
     return  ({
         type: loginConstants.LOGIN_ACCOUNT,
         payload: {
-            dataSubmit,
+            
         },
     });
 };

@@ -1,10 +1,11 @@
 import { useTranslation } from 'next-i18next';
 import Layout from '@/Common/Layout';
-import { GetStaticProps } from 'next/types';
+import { Box } from '@mui/material';
+import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 
-function NotFound(props: any) {
+function Movie(props: any) {
 
     const {
     } = props;
@@ -12,7 +13,9 @@ function NotFound(props: any) {
     const {t} = useTranslation();
   return (
     <Layout>
-
+        <Box>
+            Movie
+        </Box>
     </Layout>
    
   )
@@ -20,10 +23,16 @@ function NotFound(props: any) {
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     return {
+
         props: {
             ...(await serverSideTranslations(locale!, ['common'])),
         },
     };
 };
-
-export default NotFound;
+export async function getStaticPaths() {
+    return {
+      paths: String,    
+      fallback: true
+    }
+  }
+export default Movie;
